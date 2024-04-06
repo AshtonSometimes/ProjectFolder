@@ -1,16 +1,20 @@
+// Hint: You can use the [`find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) method here. 
 function findAccountById(accounts, id) {
-  // YOUR SOLUTION HERE
-  // Hint: You can use the [`find()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) method here. 
+  let foundID = accounts.find((account) => account.id === id);
+  return foundID;
 }
 
+ // Hint: You can use the [`sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) method here. 
 function sortAccountsByLastName(accounts) {
-  // YOUR SOLUTION HERE
-  // Hint: You can use the [`sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) method here. 
+  accounts.sort((accountA, accountB) => 
+  accountA.name.last.toLowerCase() > accountB.name.last.toLowerCase() ? 1 : -1
+  );
+  return accounts;
 }
 
+// Hint: You can use the [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method here.
 function getAccountFullNames(accounts) {
-  // YOUR SOLUTION HERE
-  // Hint: You can use the [`map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method here.
+  return accounts.map(({name:{first, last}}) => first + ' ' + last);
 }
 
 // NOTE: YOU DON'T HAVE TO EDIT THE FUNCTIONS BELOW
